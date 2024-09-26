@@ -1,4 +1,8 @@
-<h1>Movie <%= @the_movie.id %> details</h1>
+<h1>Movie #<%= @the_movie.id %> details</h1>
+
+<a href="/movies">Go back</a>
+
+<hr>
 
 <dl>
   <dt>Title</dt>
@@ -16,7 +20,7 @@
   <dt>Image</dt>
   <dd><img src="<%= @the_movie.image %>" width="100" alt=""></dd>
   
-  <dt>Directio</dt>
+  <dt>Director</dt>
   <dd>
     <% matching_records = Director.where({ :id => @the_movie.director_id }) %>
 
@@ -31,3 +35,5 @@
   <dt>Updated at</dt>
   <dd><%= @the_movie.updated_at %></dd>
 </dl>
+
+<hr>
